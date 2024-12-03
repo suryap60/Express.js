@@ -1,8 +1,10 @@
 import express from 'express'
-import routes from '../components/routes.js'
+import signUp from '../components/routes.js'
+import {login} from '../components/routes.js'
 
 const route = express.Router()
 
-route.use('/user',routes) 
+route.get('/:id',signUp) 
+route.get('/',login) 
 
 export default route

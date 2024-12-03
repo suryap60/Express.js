@@ -21,6 +21,17 @@ app.get('/ab?cd', (req, res) => {
     res.send('ab?cd')
   })
 
+app.get('/ab+c', (req, res) => {
+    res.send('ab+c');
+});
+
+app.get('/a*b', (req, res) => {
+    res.send('a*b');
+  });
+
+app.get('/a(b|c)+', (req, res) => {
+res.send('a(b|c)+');
+});
 //   MiddleWare Function
 
 let user = "Surya"
@@ -45,9 +56,6 @@ app.use('/user',router)
 app.use('/get',()=>{
     console.log('middleware function successfull')
 })
-
-
-
 
 app.listen(3033,()=>{
     console.log('Server is running in http://localhost:3033')
